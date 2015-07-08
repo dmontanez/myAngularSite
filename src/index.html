@@ -5,41 +5,105 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Daniel Montanez</title>
-                
+        
+        <!-- Latest compiled and minified jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
         <!-- Latest compiled and minified Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
         <!-- Latest compiled and minified Bootstrap JavaScript -->
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.collapse.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.transition.js"></script>
         
         <!-- External compiled and minified Angular JavaScript & local myApp file -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
         <script src="../ng/app.js"></script>
 
     </head>
+    
+    <!-- Everything in the BODY tag falls into myApp -->
     <body ng-app="myApp">
-                
+      
+        <!-- Header -->
         <div class="container-fluid" ng-controller="HomeController as home">
             <div class="page-header">
                 <div class="row">
-                    <div class="col-md-4"><h1>{{home.name}}<br><small><em>{{home.title}}</em></small></h1></div>
-                    <div class="col-md-4">
+                    
+                    <div class="col-md-4 col-sm-2">
+                        <h2>{{home.name}}<br><small><em>{{home.title}}</em></small></h2>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-2">
                         <address>
-                            {{home.address.street}}<br>
-                            {{home.address.unit_apt}}<br>
-                            {{home.address.city + ", " + home.address.state + " " + home.address.zip}}<br>
+                            <h6>
+                                {{home.address.street}}<br>
+                                {{home.address.unit_apt}}<br>
+                                {{home.address.city + ", " + home.address.state + " " + home.address.zip}}
+                            </h6>
                         </address>
                     </div>
-                    <div class="col-md-4">
+                    
+                    <div class="col-md-4 col-sm-2">
                         <address>
-                            <abbr title="Cell"><span class="glyphicon glyphicon-phone"></span></abbr> {{home.contact.phone | tel}}<br>
-                            <a href="mailto:{{home.contact.email}}"><span class="glyphicon glyphicon-envelope"></span></a> 
-                            <a href="mailto:{{home.contact.email}}">{{home.contact.email}}</a>
+                            <h6>
+                                <abbr title="Cell"><span class="glyphicon glyphicon-phone"></span></abbr> {{home.contact.phone | tel}}<br>
+                                <a href="mailto:{{home.contact.email}}"><span class="glyphicon glyphicon-envelope"></span></a> 
+                                <a href="mailto:{{home.contact.email}}">{{home.contact.email}}</a>
+                            </h6>
                         </address>
                     </div>
+                    
                 </div>    
-            </div>
+            </div> 
         </div>
-        <div class="jumbotron"></div>
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#all-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="all-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Education <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Experience</a></li>
+                        <li><a href="#">Skills</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Interests</a></li>
+                    </ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Social Profiles <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">LinkedIn</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+        <!-- Content -->
+        <div class="jumbotron">
+        
+            <h1>Interchangable page content goes here. To be populated with Angular data.</h1>
+        
+        </div>
+        
     </body>
 </html>
