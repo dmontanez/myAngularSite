@@ -1,24 +1,36 @@
-(function() {
-  var app = angular.module('myApp', []);
+(function () {
+    var app = angular.module('myApp', ['phoneFilt']);
 
-    app.controller('HomeController', function(){
-    
+    app.controller('HomeController', function() {
+        this.name = 'Daniel J. Montanez';
+        this.title = 'Master, Software Engineering';
+        this.contact = {
+            phone: 6618694325,
+            email: 'dmontanez86@gmail.com'
+        };
+        this.address = {
+            street: '7636 Palmilla Drive',
+            unit_apt: 'Unit 110',
+            city: 'San Diego',
+            state: 'CA',
+            zip: 92122
+        };
     });
     
-    app.controller('EducationController', function(){
+    app.controller('EducationController', function() {
         this.schools = institutions;
     });
     
-    app.controller('ExperienceController', function(){
+    app.controller('ExperienceController', function() {
         this.positions = companies;
     });
     
-    app.controller('SkillsController', function(){
-        
+    app.controller('SkillsController', function() {
+        this.skills = technologies;
     });
     
-    app.controller('InterestsController', function(){
-        
+    app.controller('AddinfoController', function() {
+        this.additonals = others;
     });
     
     var institutions = [
@@ -41,7 +53,7 @@
                 'Methods in Applied Statistics',
                 'Data Analysis'
             ],
-            images: [],
+            images: []
         },
         {
             name: 'Pennsylvania State University',
@@ -64,7 +76,7 @@
                 'Software Testing',
                 'Advanced Software Engineering Studio'
             ],
-            images: [],
+            images: []
         }
     ];
     
@@ -88,5 +100,53 @@
             images: []
         }
     ];
+    
+    var technologies = [
+	   {
+            proficient: [
+			 'VBA',
+			 'SQL',
+			 'ADT',
+			 'Eclipse'
+		  ],
+            moderate: [
+                'Java',
+                'HTML',
+                'CSS',
+                'XML'
+            ],
+            prior: [
+                'C++',
+                'C#',
+                'PHP',
+                'R'
+            ]
+        }
+    ];
+    
+    var others = {
+            communication: "Monthly interaction with the PMO, and Foreign Customer, providing a summary of analysis that has been performed and subsequent recommendations for program improvement: Skilled in professional presentation and delivery of information.",
+            leadership: [
+                "Implemented a Trouble Ticket Review Board which provides input for multiple facets of current program organization.",
+                "Chair of Program Integrated Product Team, tasked with documenting Business Process Model Flowcharts for all program activities."
+            ],
+            activities: [
+                "Four year letter winner for CSUB’s Division I Wrestling Team (2006 – 2010)",
+                "Assistant Wrestling Coach for Cathedral Catholic High School (2013 – Present)"
+            ]
+        };
+     
+    angular.module('phoneFilt', []).filter('tel', function() {
+        return function(number) {
+            number = String(number);
+            var area = number.substring(0,3);
+            var front = number.substring(3, 6);
+            var end = number.substring(6, 10);
+            
+            formattedNumber = ("(" + area + ") " + front + "-" + end);
+            
+            return formattedNumber;
+        };
+    });
 
 })();

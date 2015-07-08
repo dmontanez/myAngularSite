@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Daniel Montanez</title>
                 
         <!-- Latest compiled and minified Bootstrap CSS -->
@@ -13,10 +15,31 @@
         <!-- External compiled and minified Angular JavaScript & local myApp file -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
         <script src="../ng/app.js"></script>
+
     </head>
     <body ng-app="myApp">
-        
-        <div class="container"><h1>Welcome to my AngularJS Website!</h1></div>
-        
+                
+        <div class="container-fluid" ng-controller="HomeController as home">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-4"><h1>{{home.name}}<br><small><em>{{home.title}}</em></small></h1></div>
+                    <div class="col-md-4">
+                        <address>
+                            {{home.address.street}}<br>
+                            {{home.address.unit_apt}}<br>
+                            {{home.address.city + ", " + home.address.state + " " + home.address.zip}}<br>
+                        </address>
+                    </div>
+                    <div class="col-md-4">
+                        <address>
+                            <abbr title="Cell"><span class="glyphicon glyphicon-phone"></span></abbr> {{home.contact.phone | tel}}<br>
+                            <a href="mailto:{{home.contact.email}}"><span class="glyphicon glyphicon-envelope"></span></a> 
+                            <a href="mailto:{{home.contact.email}}">{{home.contact.email}}</a>
+                        </address>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="jumbotron"></div>
     </body>
 </html>
