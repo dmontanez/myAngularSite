@@ -1,6 +1,26 @@
 (function () {
-    var app = angular.module('myApp', ['phoneFilt']);
+    var app = angular.module('myApp', []);
 
+    app.controller('NavigationController', function() {
+        this.page = 1;
+        
+        this.selectPage = function(val) {
+            this.page = val;
+        };
+    });
+    
+    app.controller('ContentController', function() {
+        this.sub_page = 1;
+        
+        this.selectSub = function(setSub) {
+            this.sub_page = setSub;
+        };
+        
+        this.isSelected = function(checkSub) {
+            return this.sub_page === checkSub;  
+        };
+    });
+    
     app.controller('HomeController', function() {
         this.name = 'Daniel J. Montanez';
         this.title = 'Master, Software Engineering';
@@ -136,7 +156,7 @@
             ]
         };
      
-    angular.module('phoneFilt', []).filter('tel', function() {
+    app.filter('tel', function() {
         return function(number) {
             number = String(number);
             var area = number.substring(0,3);
@@ -148,5 +168,5 @@
             return formattedNumber;
         };
     });
-
+    
 })();
