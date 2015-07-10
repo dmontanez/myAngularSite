@@ -1,15 +1,25 @@
 (function () {
     var app = angular.module('myApp', []);
 
-    app.controller('NavigationController', function() {
-        this.page = 1;
+    app.controller('NavigationController', function($scope,NavData) {
+            
+        $scope.$watch('page', function (newValue, oldValue) {
+            if (newValue !== oldValue) NavData.setPage(newValue);
+        });
         
-        this.selectPage = function(val) {
-            this.page = val;
+        this.selectPage = function(value) {
+            $scope.page = value;
         };
+        
     });
     
-    app.controller('ContentController', function() {
+    app.controller('ContentController', function($scope,NavData) {
+        $scope.page = NavData.getPage();
+        
+        $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
+            if (newValue !== oldValue) $scope.page = newValue;
+        });
+        
         this.sub_page = 1;
         
         this.selectSub = function(setSub) {
@@ -26,7 +36,7 @@
         this.title = 'Master, Software Engineering';
         this.contact = {
             phone: 6618694325,
-            email: 'dmontanez86@gmail.com'
+            email: 'dmontanez@psualum.com'
         };
         this.address = {
             street: '7636 Palmilla Drive',
@@ -77,7 +87,7 @@
         },
         {
             name: 'Pennsylvania State University',
-            degree: 'Masters',
+            degree: 'M.E.',
             major: 'Software Engineering',
             minor: '',
             start: 1346482800000,
@@ -166,6 +176,21 @@
             formattedNumber = ("(" + area + ") " + front + "-" + end);
             
             return formattedNumber;
+        };
+    });
+    
+    app.factory('NavData', function() {
+        var data = {
+            page: 1
+        };
+        
+        return  {
+            getPage: function() {
+                return data.page;
+            },
+            setPage: function(value) {
+                data.page = value;
+            }
         };
     });
     
