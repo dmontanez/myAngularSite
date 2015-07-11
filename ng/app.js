@@ -31,7 +31,7 @@
         };
     });
     
-    app.controller('HomeController', function() {
+    app.controller('HeadController', function() {
         this.name = 'Daniel J. Montanez';
         this.title = 'Master, Software Engineering';
         this.contact = {
@@ -191,6 +191,34 @@
             setPage: function(value) {
                 data.page = value;
             }
+        };
+    });
+    
+    app.directive('myTitle', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/myTitle.html'
+        };
+    });
+    
+    app.directive('myAddress', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/myAddress.html'
+        };
+    });
+    
+    app.directive('myContact', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/myContact.html'
+        };
+    });
+    
+    app.directive('myNavBar', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/myNavBar.html'
         };
     });
     
