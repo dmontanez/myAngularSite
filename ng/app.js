@@ -1,67 +1,5 @@
 (function () {
     var app = angular.module('myApp', []);
-
-    app.controller('NavigationController', function($scope,NavData) {
-            
-        $scope.$watch('page', function (newValue, oldValue) {
-            if (newValue !== oldValue) NavData.setPage(newValue);
-        });
-        
-        this.selectPage = function(value) {
-            $scope.page = value;
-        };
-        
-    });
-    
-    app.controller('ContentController', function($scope,NavData) {
-        $scope.page = NavData.getPage();
-        
-        $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
-            if (newValue !== oldValue) $scope.page = newValue;
-        });
-        
-        this.sub_page = 1;
-        
-        this.selectSub = function(setSub) {
-            this.sub_page = setSub;
-        };
-        
-        this.isSelected = function(checkSub) {
-            return this.sub_page === checkSub;  
-        };
-    });
-    
-    app.controller('HeadController', function() {
-        this.name = 'Daniel J. Montanez';
-        this.title = 'Master, Software Engineering';
-        this.contact = {
-            phone: 6618694325,
-            email: 'dmontanez@psualum.com'
-        };
-        this.address = {
-            street: '7636 Palmilla Drive',
-            unit_apt: 'Unit 110',
-            city: 'San Diego',
-            state: 'CA',
-            zip: 92122
-        };
-    });
-    
-    app.controller('EducationController', function() {
-        this.schools = institutions;
-    });
-    
-    app.controller('ExperienceController', function() {
-        this.positions = companies;
-    });
-    
-    app.controller('SkillsController', function() {
-        this.skills = technologies;
-    });
-    
-    app.controller('AddinfoController', function() {
-        this.additonals = others;
-    });
     
     var institutions = [
         {
@@ -83,7 +21,11 @@
                 'Methods in Applied Statistics',
                 'Data Analysis'
             ],
-            images: []
+            images: [
+                "images/ed_csub_logo.png",
+                "images/lgo_csub.png",
+                "images/sl_csub.png"
+            ]
         },
         {
             name: 'Pennsylvania State University',
@@ -106,7 +48,11 @@
                 'Software Testing',
                 'Advanced Software Engineering Studio'
             ],
-            images: []
+            images: [
+                "images/ed_psu_logo.png",
+                "images/lgo_psu.png",
+                "images/sl_psu.png"
+            ]
         }
     ];
     
@@ -193,6 +139,45 @@
             }
         };
     });
+     
+    app.controller('EducationController', function() {
+        this.schools = institutions;
+    });
+    
+    app.controller('ExperienceController', function() {
+        this.positions = companies;
+    });
+    
+    app.controller('SkillsController', function() {
+        this.skills = technologies;
+    });
+    
+    app.controller('AddinfoController', function() {
+        this.additonals = others;
+    });
+    
+    app.directive('myHeader', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/myHeader.html',
+            controller: function() {
+                this.name = 'Daniel J. Montanez';
+                this.title = 'Master, Software Engineering';
+                this.contact = {
+                    phone: 6618694325,
+                    email: 'dmontanez@psualum.com'
+                };
+                this.address = {
+                    street: '7636 Palmilla Drive',
+                    unit_apt: 'Unit 110',
+                    city: 'San Diego',
+                    state: 'CA',
+                    zip: 92122
+                };
+            },
+            controllerAs: 'head'
+        };
+    });
     
     app.directive('myTitle', function() {
         return {
@@ -218,7 +203,108 @@
     app.directive('myNavBar', function() {
         return {
             restrict: 'E',
-            templateUrl: 'partials/myNavBar.html'
+            templateUrl: 'partials/myNavBar.html',
+            controller: function($scope,NavData) {
+                $scope.$watch('page', function (newValue, oldValue) {
+                    if (newValue !== oldValue) NavData.setPage(newValue);
+                });
+                this.selectPage = function(value) {
+                    $scope.page = value;
+                };
+            },
+            controllerAs: 'nav'
+        };
+    });
+    
+    app.directive('contentHeader', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/contentHeader.html',
+            controller: function($scope, NavData) {
+                $scope.page = NavData.getPage();
+                $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
+                    if (newValue !== oldValue) $scope.page = newValue;
+                });
+                this.getTitle = function(val) {
+                    switch(val) {
+                        case 1:
+                            pageTitle = 'Home'
+                            break;
+                        case 2:
+                            pageTitle = 'Education'
+                            break;
+                        case 3:
+                            pageTitle = 'Experience'
+                            break;
+                        case 4:
+                            pageTitle = 'Skills'
+                            break;
+                        case 5:
+                            pageTitle = 'Projects'
+                            break;
+                        case 6:
+                            pageTitle = 'Interests'
+                            break;
+                        case 7:
+                            pageTitle = 'Contact'
+                            break;
+                    }
+                        
+                    return pageTitle;
+                };
+                this.getPage = function(val) {
+                    return this.page === val;
+                };
+            },
+            controllerAs: 'contHead'
+        };
+    });
+    
+    app.directive('contentText', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/contentText.html',
+            controller: function($scope, NavData) {
+                $scope.page = NavData.getPage();
+                $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
+                    if (newValue !== oldValue) $scope.page = newValue;
+                });
+                this.getPage = function(val) {
+                    return $scope.page === val;
+                };
+            },
+            controllerAs: 'contText'
+        };
+    });
+    
+    app.directive('contentPanels', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/contentPanels.html',
+            controller: function($scope, NavData) {
+                $scope.page = NavData.getPage();
+                $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
+                    if (newValue !== oldValue) $scope.page = newValue;
+                });
+                this.getPage = function(val) {
+                    return $scope.page === val;
+                };
+                this.sub_page = 1;
+                this.selectSub = function(setSub) {
+                    this.sub_page = setSub;
+                };
+                this.isSelected = function(checkSub) {
+                    return this.sub_page === checkSub;  
+                };
+            },
+            controllerAs: 'cont'
+        };
+    });
+    
+    app.directive('myFooter', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'partials/myFooter.html',
         };
     });
     

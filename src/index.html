@@ -22,6 +22,7 @@
         <!-- External compiled and minified Angular JavaScript & local myApp file -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
         <script src="../ng/app.js"></script>
+
         
         <!-- Custom files -->
         <link rel="stylesheet" href="../css/footer.css">
@@ -32,37 +33,17 @@
     <body ng-app="myApp">
         
         <!-- Header -->
-        <div class="container-fluid" ng-controller="HeadController as head">
-            <div class="page-header">
-                <div class="row">
-                    <my-title></my-title>
-                    <my-address></my-address>
-                    <my-contact></my-contact>
-                </div>    
-            </div> 
-        </div>
+        <my-header></my-header>
         
         <!-- Navigation -->
         <my-nav-bar></my-nav-bar>
         
         <!-- Content -->
-        <div class="container" ng-controller="ContentController as cont">
-            <h4>{{page}}</h4>
-            <section>
-                <ul class="nav nav-pills">
-                    <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">OPTION 1</a></li>
-                    <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">OPTION 2</a></li>
-                    <li ng-class="{ active: cont.isSelected(3)}"><a href="#" ng-click="cont.selectSub(3)">OPTION 3</a></li>
-                </ul>         
-            </section>
-            {{cont.sub_page}}
-        </div>
+        <content-header></content-header>
+        <content-text></content-text>
+        <content-panels></content-panels>
         
         <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <p class="text-muted">Place sticky footer content here.</p>
-            </div>
-        </footer>
+        <my-footer></my-footer>
     </body>
 </html>

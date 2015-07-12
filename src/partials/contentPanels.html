@@ -1,0 +1,33 @@
+<div class="container">
+    <section ng-show="contText.getPage(2)">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">PSU</a></li>
+            <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">CSUB</a></li>
+        </ul>         
+        <div class="container" ng-controller="EducationController as ed">
+            <div class="panel" ng-repeat="school in ed.schools">
+                <section ng-show="cont.isSelected($index)">
+                    <img ng-src={{school.images[2]}} height="100" />
+                    <img ng-src={{school.images[1]}} height="100" class="pull-right" style="text-align:left" />
+                    <h4>{{school.name}}</h4>
+                    <h5>{{school.degree}}, {{school.major}}</h5>
+                    <h5 ng-show="school.minor.length">{{school.minor}}</h5>
+                    <h6>{{school.start | date}} - {{school.end | date}}</h6>
+                    <hr />
+                    <em ng-repeat="course in school.courses"><small>{{course}}</small> - </em>
+                    
+                </section>
+            </div>
+        </div>
+    </section>
+    
+    <section ng-show="contText.getPage(3)">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">CSC</a></li>
+            <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">OXY</a></li>
+        </ul>         
+        <div class="panel">
+            {{page}} & {{cont.sub_page}}
+        </div>
+    </section>
+</div>
