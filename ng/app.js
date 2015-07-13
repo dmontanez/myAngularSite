@@ -3,31 +3,6 @@
     
     var institutions = [
         {
-            name: 'California State University Bakersfield',
-            degree: 'B.S.',
-            major: 'Computer Science',
-            minor: 'Philosophy',
-            start: 1126594800000,
-            end: 1308121200000,
-            courses: [
-                'Web Design',
-                'Advanced Computer Networks',
-                'Database Systems',
-                'Software Engineering',
-                'Beginning Artificial Intelligence',
-                'Advanced Artificial Intelligence',
-                'Programming Languages',
-                'Advanced Computer Srchitecture',
-                'Methods in Applied Statistics',
-                'Data Analysis'
-            ],
-            images: [
-                "images/ed_csub_logo.png",
-                "images/lgo_csub.png",
-                "images/sl_csub.png"
-            ]
-        },
-        {
             name: 'Pennsylvania State University',
             degree: 'M.E.',
             major: 'Software Engineering',
@@ -53,25 +28,50 @@
                 "images/lgo_psu.png",
                 "images/sl_psu.png"
             ]
+        },
+        {
+            name: 'California State University Bakersfield',
+            degree: 'B.S.',
+            major: 'Computer Science',
+            minor: 'Philosophy',
+            start: 1126594800000,
+            end: 1308121200000,
+            courses: [
+                'Web Design',
+                'Advanced Computer Networks',
+                'Database Systems',
+                'Software Engineering',
+                'Beginning Artificial Intelligence',
+                'Advanced Artificial Intelligence',
+                'Programming Languages',
+                'Advanced Computer Srchitecture',
+                'Methods in Applied Statistics',
+                'Data Analysis'
+            ],
+            images: [
+                "images/ed_csub_logo.png",
+                "images/lgo_csub.png",
+                "images/sl_csub.png"
+            ]
         }
     ];
     
     var companies = [
-        {
-            name: 'Occidental Petroleum',
-            title: 'Assistant Regulatory Analyst',
-            start: 1280646000000,
-            end: 1306911600000,
-            isCurrent: false,
-            descr: '',
-            images: []
-        },
         {
             name: 'Computer Sciences Corporation',
             title: 'Logistics Engineer, Professional',
             start: 1306911600000,
             end: 1306911600000,
             isCurrent: true,
+            descr: '',
+            images: []
+        },
+        {
+            name: 'Occidental Petroleum',
+            title: 'Assistant Regulatory Analyst',
+            start: 1280646000000,
+            end: 1306911600000,
+            isCurrent: false,
             descr: '',
             images: []
         }
@@ -127,7 +127,7 @@
     
     app.factory('NavData', function() {
         var data = {
-            page: 1
+            page: 0
         };
         
         return  {
@@ -227,25 +227,25 @@
                 });
                 this.getTitle = function(val) {
                     switch(val) {
-                        case 1:
+                        case 0:
                             pageTitle = 'Home'
                             break;
-                        case 2:
+                        case 1:
                             pageTitle = 'Education'
                             break;
-                        case 3:
+                        case 2:
                             pageTitle = 'Experience'
                             break;
-                        case 4:
+                        case 3:
                             pageTitle = 'Skills'
                             break;
-                        case 5:
+                        case 4:
                             pageTitle = 'Projects'
                             break;
-                        case 6:
+                        case 5:
                             pageTitle = 'Interests'
                             break;
-                        case 7:
+                        case 6:
                             pageTitle = 'Contact'
                             break;
                     }
@@ -282,19 +282,24 @@
             restrict: 'E',
             templateUrl: 'partials/contentPanels.html',
             controller: function($scope, NavData) {
+                $scope.sub_page = 0;
                 $scope.page = NavData.getPage();
+                
                 $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
-                    if (newValue !== oldValue) $scope.page = newValue;
+                    if (newValue !== oldValue) {
+                        $scope.page = newValue;
+                        $scope.sub_page = 0;
+                    };
                 });
+                                
                 this.getPage = function(val) {
                     return $scope.page === val;
                 };
-                this.sub_page = 1;
                 this.selectSub = function(setSub) {
-                    this.sub_page = setSub;
+                    $scope.sub_page = setSub;
                 };
                 this.isSelected = function(checkSub) {
-                    return this.sub_page === checkSub;  
+                    return $scope.sub_page === checkSub;  
                 };
             },
             controllerAs: 'cont'
@@ -305,6 +310,9 @@
         return {
             restrict: 'E',
             templateUrl: 'partials/myFooter.html',
+            controller: function($scope) {
+                $scope.date = new Date();
+            }
         };
     });
     
