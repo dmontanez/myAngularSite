@@ -85,4 +85,52 @@
             </section>
         </div>
     </section>
+    <!-- Panel Content for Projects Page ----------------------------------------------------------------------------- -->
+    <section ng-show="contText.getPage(4)">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">WEBSITE</a></li>
+            <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">RESUME APP</a></li>
+            <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">BUDGET NOTEBOOK</a></li>
+            <li ng-class="{ active: cont.isSelected(3)}"><a href="#" ng-click="cont.selectSub(3)">TOURNAMENT CREATOR</a></li>
+            <li ng-class="{ active: cont.isSelected(4)}"><a href="#" ng-click="cont.selectSub(4)">IDEAS - TODO</a></li>
+            <li ng-class="{ active: cont.isSelected(-1)}"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
+        </ul>         
+        
+        <br>
+        
+        <div ng-controller="ProjectsController as proj">
+            <section ng-repeat="project in proj.projects" ng-show="cont.isSelected($index) || cont.isSelected(-1)">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="{{project.link}}">
+                                    <img class="media-object" src="{{project.images[0]}}" height="64" />
+                                </a>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="media-heading">{{project.name}}</h4>
+                                <a href="{{project.link}}">
+                                    {{project.link}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="panel-body">
+                        <em><small>{{project.descr}}</small></em>
+                    </div>
+                    
+                    <div class="panel-body" ng-show="item.lenght">
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="item in project.items">
+                                <span class="badge">{{item.num}}</span>
+                                <em ><small>{{item.name}}</small></em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
 </div>

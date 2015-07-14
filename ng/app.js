@@ -95,15 +95,15 @@
                     num: '-'
                 },
                 {
-			        name: 'SQL',
+			     name: 'SQL',
                     num: 2
                 },
                 {
-			        name: 'ADT',
+			     name: 'ADT',
                     num: 3
                 },
                 {
-			        name: 'Eclipse',
+			     name: 'Eclipse',
                     num: 2
                 }
 		      ]
@@ -186,6 +186,47 @@
         }
     ];
     
+    var activities = [
+        {
+            name: 'Website',
+            link: "https://github.com/dmontanez/myAngularSite",
+            images: [
+                "images/profile.png"
+            ],
+            descr: 'Website description.'
+        },
+        {
+            name: 'Resume App',
+            link: "https://github.com/dmontanez/MyResume",
+            images: [
+                "images/ic_resume_app.png"
+            ],
+            descr: 'Resume Android App Description.'
+        },
+        {
+            name: 'Budget Notebook',
+            link: "https://github.com/jzz128/BudgeNotes",
+            images: [
+                "images/ic_budget_notebook.png"
+            ],
+            descr: 'Budget Notebook description.'
+        },
+        {
+            name: 'Tournament Creator',
+            link: "http://cs.csubak.edu/~dmontane/tournament/",
+            images: [
+                "images/ic_tourn_create.png"
+            ],
+            descr: 'Tournament Creator description.'
+        },
+        {
+            name: 'Ideas - TODO',
+            items: [
+                
+            ]
+        }
+    ];
+    
     var others = {
             communication: "Monthly interaction with the PMO, and Foreign Customer, providing a summary of analysis that has been performed and subsequent recommendations for program improvement: Skilled in professional presentation and delivery of information.",
             leadership: [
@@ -236,6 +277,10 @@
     
     app.controller('SkillsController', function() {
         this.skills = technologies;
+    });
+    
+    app.controller('ProjectsController', function() {
+        this.projects = activities;
     });
     
     app.controller('AddinfoController', function() {
