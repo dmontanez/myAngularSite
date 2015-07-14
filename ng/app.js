@@ -63,8 +63,13 @@
             start: 1306911600000,
             end: 1306911600000,
             isCurrent: true,
-            descr: '',
-            images: []
+            descr: 'Provide key analysis necessary for demonstrating program success in the form of Operational Availability.' +
+                    'Developed unique Provisioning algorithm for generating spares procurement recommendations.' +
+                    'Generate recommendations to maximize return on investment of program assets.' +
+                    'Developed and utilize database for management and analysis of program trouble tickets',
+            images: [
+                "images/ex_logo_csc.png"
+            ]
         },
         {
             name: 'Occidental Petroleum',
@@ -72,30 +77,111 @@
             start: 1280646000000,
             end: 1306911600000,
             isCurrent: false,
-            descr: '',
-            images: []
+            descr: 'Quality Assurance for new drill & existing well modification specifications.' +
+                    'As part of a self driven initiative; created an Access database to track leased land plot, incident reports.  Used to nominate leases' +
+                    ' for a Clean Lease award with the Department of Gas & Geothermal Resources.',
+            images: [
+                "images/ex_logo_oxy.png"
+            ]
         }
     ];
     
     var technologies = [
-	   {
-            proficient: [
-			 'VBA',
-			 'SQL',
-			 'ADT',
-			 'Eclipse'
-		  ],
-            moderate: [
-                'Java',
-                'HTML',
-                'CSS',
-                'XML'
-            ],
-            prior: [
-                'C++',
-                'C#',
-                'PHP',
-                'R'
+        {
+            level: 'Proficient',
+            items: [
+                {
+                    name: 'VBA',
+                    num: '-'
+                },
+                {
+			        name: 'SQL',
+                    num: 2
+                },
+                {
+			        name: 'ADT',
+                    num: 3
+                },
+                {
+			        name: 'Eclipse',
+                    num: 2
+                }
+		      ]
+        },
+        {
+            level: 'Moderately Proficient',
+            items: [
+                {
+                    name: 'Java',
+                    num: 4
+                },
+                {
+			        name: 'HTML',
+                    num: '-'
+                },
+                {
+			        name: 'CSS',
+                    num: '-'
+                },
+                {
+			        name: 'XML',
+                    num: '-'
+                }
+            ]
+        },
+        {
+            level: 'Prior Experience',
+            items: [
+                {
+                    name: 'C++',
+                    num: 2
+                },
+                {
+			        name: 'C#',
+                    num: '-'
+                },
+                {
+			        name: 'PHP',
+                    num: '-'
+                },
+                {
+			        name: 'R',
+                    num: '-'
+                }
+            ]
+        },
+        {
+            level: 'Currently Learning',
+            items: [
+                {
+                    name: 'Angular.JS',
+                    num: '-'
+                },
+                {
+			        name: 'Bootstrap',
+                    num: 2
+                } 
+            ]
+        },
+        {
+            level: 'Others',
+            items: [
+                {
+                    name: 'Software Engineering',
+                    num: 7
+                },
+                {
+			        name: 'Software Development',
+                    num: 6
+                },
+                {
+			        name: 'Analysis',
+                    num: 6
+                },
+                {
+			        name: 'Program Management',
+                    num: 3
+                }
             ]
         }
     ];
@@ -246,6 +332,9 @@
                             pageTitle = 'Interests'
                             break;
                         case 6:
+                            pageTitle = 'Resume'
+                            break;
+                        case 7:
                             pageTitle = 'Contact'
                             break;
                     }
@@ -265,6 +354,10 @@
             restrict: 'E',
             templateUrl: 'partials/contentText.html',
             controller: function($scope, NavData) {
+                this.objects = [
+                    "resources/resume.pdf"
+                    
+                ];
                 $scope.page = NavData.getPage();
                 $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
                     if (newValue !== oldValue) $scope.page = newValue;
