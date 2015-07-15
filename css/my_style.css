@@ -1,0 +1,11 @@
+.footer {
+    text-align: center;
+}
+
+.container .text-muted {
+  margin: 10px 0;
+}
+
+body { 
+    padding-bottom: 70px;
+}

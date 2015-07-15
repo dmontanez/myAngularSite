@@ -193,7 +193,11 @@
             images: [
                 "images/profile.png"
             ],
-            descr: 'Website description.'
+            descr: 'This is teh website you are currently viewing!  I developed this site using Angular.JS, and Twitter Bootstrap, to help organize some information about myself' +
+                    ' and showcase what I am about.  You will find most (if not all) of this site is compiled of information that can be found on my resume and LinkedIn Profile.  ' +
+                    'I will be working in available APIs periodically, such as the LinkedIn API to keep my Skills and associated merit badges up to date.  The Interests section ' +
+                    'will provide some insight into me as an individual, and provides a better look at what isn\'t necissarily apparant from other sources.  Feel free to reach ' +
+                    'out on social media or email if you\'d like to discuss anything referenced on the site, or just network a little bit!'
         },
         {
             name: 'Resume App',

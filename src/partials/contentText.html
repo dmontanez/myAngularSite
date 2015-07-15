@@ -1,59 +1,62 @@
 <div class="container">
     <!-- Text for Home Page ------------------------------------------------------------------------------------------------------------ -->
     <div ng-show="contText.getPage(0)">
-        
         <section>
-            <div class="page-header">
-                
-                <img class="img-rounded pull-left" style="margin-right: 10" src="../src/images/profile.png" height="100" />
-                
-                <strong>Excellent Technical Aptitude:</strong>
-                    <small>Quick at acquiring new skills and utilizing new technology.</small>
-                <br>
-                <strong>Knowledgeable of Software Engineering Fundamentals:</strong>
-                    <small>Competent in software development lifecycle – from conception through delivery.</small>
-                <br>
-                <strong>Innovative:</strong>
-                    <small>Able to develop unique methodology and procedures for accomplishing goals.</small>
-                <br>
-                <strong>Double-Loop Learner:</strong>
-                    <small>Actively critique personal methodology and decision making process, making adjustments when needed.</small>
+            <div class="media">
+                <div class="media-left">
+                    <img class="img-rounded pull-left" style="margin-right: 10" src="../src/images/profile.png" height="100" />
+                </div>
+                <div class="media-body">
+                    <em>
+                        <strong>Excellent Technical Aptitude:</strong>
+                            <small>Quick at acquiring new skills and utilizing new technology.</small>
+                        <br>
+                        <strong>Knowledgeable of Software Engineering Fundamentals:</strong>
+                            <small>Competent in software development lifecycle – from conception through delivery.</small>
+                        <br>
+                        <strong>Innovative:</strong>
+                            <small>Able to develop unique methodology and procedures for accomplishing goals.</small>
+                        <br>
+                        <strong>Double-Loop Learner:</strong>
+                            <small>Actively critique personal methodology and decision making process, making adjustments when needed.</small>
+                        </em>
+                </div>
+                <p>
+                    Welcome to my website!  I put this site together to organize some information about me, and showcase myself a bit! Take a look around,
+                    and feel free to contact me regarding anything referenced on the site.
+                    <br><br>
+                    <a href="#" ng-click="{{NavData.setPage(4)}]">Click Here for more information about this website.</a>
+                    <br><br>
+                    <small>This site was built using Angular.JS and Twitter Bootstrap.</small>
+                </p>
             </div>
-            
-            <p>
-                Welcome to my website!  I put this site together to organize some information about me, and showcase myself a bit! Take a look around,
-                and feel free to contact me regarding anything referenced on the site.<br><br>
-                <small>This site was built using Angular.JS and Twitter Bootstrap.</small>
-            </p>
         </section>
     </div>
-    <!-- Text for Education Page ------------------------------------------------------------------------------------------------------------ -->
     <!-- Text for Skills Page ------------------------------------------------------------------------------------------------------------ -->
     <div ng-show="contText.getPage(3)">
-        <section>
-            <small>Badges associated with skills are taken from LinkedIn :: TODO integrate with LinkedIn API</small>
-        </section>
+        <em><small>Badges associated with skills are taken from LinkedIn :: TODO integrate with LinkedIn API</small></em>
     </div>
     <!-- Text for Projects Page ------------------------------------------------------------------------------------------------------------ -->
     <div ng-show="contText.getPage(4)">
-        <section>
-            TODO 4
-        </section>
+        <em><small>
+            Each of the projects listed below, I have made substantial contributions to.  In fact, I have complete ownership of all of them,
+            with the exception of Budget Notebook, which was a team development project completed as part of my ME program through Penn State.
+        </small></em>
     </div>
     <!-- Text for Interests Page ------------------------------------------------------------------------------------------------------------ -->
     <div ng-show="contText.getPage(5)">
-        <section>
-            TODO 5
-        </section>
+                    <section>
+                        TODO 5
+                    </section>
     </div>
     <!-- Text for Resume Page ------------------------------------------------------------------------------------------------------------ -->
     <div ng-show="contText.getPage(6)">
-        <embed src="{{contText.objects[0]}}" width="90%" height="90%"></embed>
+                    <embed src="{{contText.objects[0]}}" width="90%" height="90%"></embed>
     </div>
-<!-- Text for Contact Page ------------------------------------------------------------------------------------------------------------ -->
+    <!-- Text for Contact Page ------------------------------------------------------------------------------------------------------------ -->
     <div ng-show="contText.getPage(7)">
-        <section>
-            TODO 7
-        </section>
+                    <section>
+                        TODO 7
+                    </section>
     </div>
 </div><br>

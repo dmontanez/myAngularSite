@@ -22,10 +22,9 @@
         <!-- External compiled and minified Angular JavaScript & local myApp file -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
         <script src="../ng/app.js"></script>
-
         
-        <!-- Custom files -->
-        <link rel="stylesheet" href="../css/footer.css">
+        <!-- Custom CSS ---------------------------------------------------------- -->
+        <link rel="stylesheet" href="../css/my_style.css">
 
     </head>
     
@@ -34,15 +33,18 @@
         
         <!-- Header -->
         <my-header></my-header>
-        
+         
         <!-- Navigation -->
         <my-nav-bar></my-nav-bar>
         
         <!-- Content -->
         <content-header></content-header>
+        <div class="panel panel-default">
+        <div class="panel-body">
         <content-text></content-text>
         <content-panels></content-panels>
-        
+        </div>
+        </div>
         <!-- Footer -->
         <my-footer></my-footer>
     </body>
