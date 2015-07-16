@@ -111,25 +111,26 @@
                             <div class="media-body media-middle">
                                 <h4 class="media-heading">{{project.name}}</h4>
                                 <a href="{{project.link}}">
-                                    {{project.link}}
+                                    <em>{{project.link}}</em>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="panel-body">
-                        <table class="table table-striped">
-                            <tr>
-                                <td>
-                                    <em><small>{{project.descr}}</small></em>
-                                </td>
-                            </tr>
-                            <tr ng-repeat="use in project.uses">
-                                <td>
-                                    <em><small>{{use}}</small></em>
-                                </td>
-                            </tr>
-                        </table>
+                        <em><small>{{project.descr}}</small></em>
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                              <tr>
+                                <th><small>Technology Used</small></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="use in project.uses">
+                                <td><small>{{use}}</small></td>
+                              </tr>
+                            </tbody>
+                          </table>
                     </div>
                     
                     <div class="panel-body" ng-show="item.lenght">
@@ -137,6 +138,34 @@
                             <li class="list-group-item" ng-repeat="item in project.items">
                                 <span class="badge">{{item.num}}</span>
                                 <em ><small>{{item.name}}</small></em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- Panel Content for Interests Page ----------------------------------------------------------------------------- -->
+    <section ng-show="contText.getPage(5)">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">COMMUNICATION</a></li>
+            <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">LEADERSHIP</a></li>
+            <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">ACTIVITIES</a></li>
+            <li ng-class="{ active: cont.isSelected(-1)}"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
+        </ul>         
+        
+        <br>
+        
+        <div ng-controller="AddinfoController as adi">
+            <section ng-repeat="interest in adi.interests" ng-show="cont.isSelected($index) || cont.isSelected(-1)">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">{{interest.name}}</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="act in interest.acts">
+                                {{act}}
                             </li>
                         </ul>
                     </div>
