@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('header', []);
     
-     app.filter('tel', function() {
+    app.filter('tel', function() {
         return function(number) {
             number = String(number);
             var area = number.substring(0,3);
@@ -20,7 +20,7 @@
             templateUrl: 'partials/header/myHeader.html',
             controller: function() {
                 this.name = 'Daniel J. Montanez';
-                this.title = 'Master, Software Engineering';
+                this.title = 'ME, Software Engineering';
                 this.contact = {
                     phone: 6618694325,
                     email: 'dmontanez@psualum.com'

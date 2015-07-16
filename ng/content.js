@@ -298,6 +298,22 @@
         this.projects = activities;
     });
     
+    app.controller('ContactController', function() {
+        this.phone = 6618694325;
+        this.digital = {
+            email: 'dmontanez@psualum.com',
+            email_sec: 'dmontanez86@gmail.com',
+            email_ter: 'psu.djm496@gmail.com'
+        };
+        this.physical = {
+            street: '7636 Palmilla Drive',
+            unit_apt: 'Unit 110',
+            city: 'San Diego',
+            state: 'CA',
+            zip: 92122
+        };
+    });
+    
     app.controller('AddinfoController', function() {
         this.interests = others;
     });

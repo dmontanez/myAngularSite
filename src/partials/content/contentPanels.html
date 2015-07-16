@@ -145,7 +145,7 @@
             </section>
         </div>
     </section>
-    <!-- Panel Content for Interests Page ----------------------------------------------------------------------------- -->
+    <!-- Panel Content for Other Page ----------------------------------------------------------------------------- -->
     <section ng-show="contText.getPage(5)">
         <ul class="nav nav-pills">
             <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">COMMUNICATION</a></li>
@@ -171,6 +171,27 @@
                     </div>
                 </div>
             </section>
+        </div>
+    </section>
+    <!-- Panel Content for Contact Page ----------------------------------------------------------------------------- -->
+    <section ng-show="contText.getPage(7)">
+        <div ng-controller="ContactController as contact">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 calss="panel-title">CONTACT</h4>
+                </div>
+                <div class="panel-body">
+                    <strong>PHONE: </strong><em><small>{{contact.phone}}</small></em><br><br>
+                    <strong>Preffered Email: </strong><em><small>{{contact.digital.email}}</small></em><br>
+                    <strong>Primary Email: </strong><em><small>{{contact.digital.email_sec}}</small></em><br>
+                    <strong>Secondary Email: </strong><em><small>{{contact.digital.email_ter}}</small></em><br><br>
+                    <strong>Address: </strong><br>
+                    <em><small> {{contact.physical.street}}     <br>
+                                {{contact.physical.unit_apt}}   <br>
+                                {{contact.physical.city}}, {{contact.physical.state}} {{contact.physical.zip}}
+                    </small></em>
+                </div>
+            </div>
         </div>
     </section>
 </div>
