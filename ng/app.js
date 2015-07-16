@@ -193,6 +193,13 @@
             images: [
                 "images/profile.png"
             ],
+            uses: [
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'Angular.JS',
+                'Twitter Bootstrap'
+            ],
             descr: 'This is teh website you are currently viewing!  I developed this site using Angular.JS, and Twitter Bootstrap, to help organize some information about myself' +
                     ' and showcase what I am about.  You will find most (if not all) of this site is compiled of information that can be found on my resume and LinkedIn Profile.  ' +
                     'I will be working in available APIs periodically, such as the LinkedIn API to keep my Skills and associated merit badges up to date.  The Interests section ' +
@@ -205,7 +212,15 @@
             images: [
                 "images/ic_resume_app.png"
             ],
-            descr: 'Resume Android App Description.'
+            uses: [
+                'Java',
+                'XML',
+                'ADT',
+                'SQLite'
+            ],
+            descr: 'This App is my second attempt at building an Android Application.  I had a lot of fun working on the Budget Notebook App as part of a team while completing my ' +
+                    'Masters Degree through Penn State, so I decided that another App would be fun too!  This App takes all the same information that is presented on my resume, and ' +
+                    'presents it in a different medium.'
         },
         {
             name: 'Budget Notebook',
@@ -213,7 +228,14 @@
             images: [
                 "images/ic_budget_notebook.png"
             ],
-            descr: 'Budget Notebook description.'
+            uses: [
+                'Java',
+                'XML',
+                'ADT',
+                'SQLite'
+            ],
+            descr: 'My responsibilities included: Initial draft of System Requirements Specifications, Use Case Specifications, Database Model, UI Flow design, coding for major' +
+                    ' functionality including future account balance prediction, transaction activity reporting, and recommendation generation.'
         },
         {
             name: 'Tournament Creator',
@@ -221,7 +243,12 @@
             images: [
                 "images/ic_tourn_create.png"
             ],
-            descr: 'Tournament Creator description.'
+            uses: [
+                'HTML',
+                'PHP'
+            ],
+            descr: 'I created this web app to assist in running the summer team wrestling camp tournament that is run each year at CSUB. The application takes a list of teams, ' +
+                    'and generates a tournament schedule to be run "Round Robin" style.'
         },
         {
             name: 'Ideas - TODO',
@@ -231,17 +258,27 @@
         }
     ];
     
-    var others = {
-            communication: "Monthly interaction with the PMO, and Foreign Customer, providing a summary of analysis that has been performed and subsequent recommendations for program improvement: Skilled in professional presentation and delivery of information.",
-            leadership: [
-                "Implemented a Trouble Ticket Review Board which provides input for multiple facets of current program organization.",
-                "Chair of Program Integrated Product Team, tasked with documenting Business Process Model Flowcharts for all program activities."
+    var others = [
+        {
+            name: 'Communication',
+            descr: 'Monthly interaction with the PMO, and Foreign Customer, providing a summary of analysis that has been performed and subsequent recommendations for program improvement: ' +
+                    'Skilled in professional presentation and delivery of information.'
+        },
+        {
+            name: 'Leadership',
+            descr: [
+                'Implemented a Trouble Ticket Review Board which provides input for multiple facets of current program organization.',
+                'Chair of Program Integrated Product Team, tasked with documenting Business Process Model Flowcharts for all program activities.'
             ],
-            activities: [
-                "Four year letter winner for CSUB’s Division I Wrestling Team (2006 – 2010)",
-                "Assistant Wrestling Coach for Cathedral Catholic High School (2013 – Present)"
+        },
+        {
+            name: 'Activities',
+            descr: [
+                'Four year letter winner for CSUB’s Division I Wrestling Team (2006 – 2010)',
+                'Assistant Wrestling Coach for Cathedral Catholic High School (2013 – Present)'
             ]
-        };
+        }
+    ];
      
     app.filter('tel', function() {
         return function(number) {

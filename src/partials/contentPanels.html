@@ -118,7 +118,18 @@
                     </div>
                     
                     <div class="panel-body">
-                        <em><small>{{project.descr}}</small></em>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>
+                                    <em><small>{{project.descr}}</small></em>
+                                </td>
+                            </tr>
+                            <tr ng-repeat="use in project.uses">
+                                <td>
+                                    <em><small>{{use}}</small></em>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     
                     <div class="panel-body" ng-show="item.lenght">
