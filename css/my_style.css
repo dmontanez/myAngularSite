@@ -9,3 +9,7 @@
 body { 
     padding-bottom: 70px;
 }
+
+#page-header-top {
+    background-color: darkred;
+}   
