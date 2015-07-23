@@ -11,5 +11,17 @@ body {
 }
 
 #page-header-top {
-    background-color: darkred;
-}   
+    background-color: #337AB7;
+}
+    
+.head-text {
+    color: white;
+}
+
+.head-text small {
+    color: white;
+}
+
+.head-text a {
+    color: white;
+}

@@ -158,9 +158,17 @@
                     num: '-'
                 },
                 {
-			        name: 'Bootstrap',
+			     name: 'Bootstrap',
                     num: '-'
-                } 
+                },
+                {
+			     name: 'Python',
+                    num: '-'
+                },
+                {
+			     name: 'Ruby on Rails',
+                    num: '-'
+                }
             ]
         },
         {
@@ -386,18 +394,21 @@
         return {
             restrict: 'E',
             templateUrl: 'partials/content/contentText.html',
-            controller: function($scope, NavData) {
+            controller: function($scope, $window, NavData) {
+                
                 this.objects = [
                     "resources/resume.pdf"
                     
                 ];
-                $scope.page = NavData.getPage();
-                $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
-                    if (newValue !== oldValue) $scope.page = newValue;
-                });
+               
                 this.getPage = function(val) {
                     return $scope.page === val;
                 };
+                
+                this.selectPage = function(value) {
+                    $scope.page = value;
+                };
+                
             },
             controllerAs: 'contText'
         };
