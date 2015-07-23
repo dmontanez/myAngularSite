@@ -419,13 +419,13 @@
             restrict: 'E',
             templateUrl: 'partials/content/contentPanels.html',
             controller: function($scope, NavData) {
-                $scope.sub_page = 0;
+                $scope.sub_page = -1;
                 $scope.page = NavData.getPage();
                 
                 $scope.$watch(function () { return NavData.getPage(); }, function (newValue, oldValue) {
                     if (newValue !== oldValue) {
                         $scope.page = newValue;
-                        $scope.sub_page = 0;
+                        $scope.sub_page = -1;
                     };
                 });
                                 
