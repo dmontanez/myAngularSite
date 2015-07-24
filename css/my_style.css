@@ -11,7 +11,8 @@ body {
 }
 
 #page-header-top {
-    background-color: #337AB7;
+    
+    background-color: #003366;
 }
     
 .head-text {
@@ -24,4 +25,8 @@ body {
 
 .head-text a {
     color: white;
+}
+
+#content-panel-body {
+    background-color: #F2F2F7;
 }
