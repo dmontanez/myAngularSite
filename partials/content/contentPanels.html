@@ -5,9 +5,9 @@
     <!-- Panel Content for Education Page -->
     <section ng-show="contText.getPage(1)">
         <ul class="nav nav-pills">
-            <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">PSU</a></li>
-            <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">CSUB</a></li>
-            <li ng-class="{ active: cont.isSelected(-1)}"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
+            <li ng-class="{ active: cont.isSelected(0)}" id="nav-pill"><a href="#" ng-click="cont.selectSub(0)">PSU</a></li>
+            <li ng-class="{ active: cont.isSelected(1)}" id="nav-pill"><a href="#" ng-click="cont.selectSub(1)">CSUB</a></li>
+            <li ng-class="{ active: cont.isSelected(-1)}" id="nav-pill"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
         </ul>
         
         <br>
