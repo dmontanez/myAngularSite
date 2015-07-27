@@ -1,0 +1,49 @@
+
+/* ----------------------------------------------------------------------------------------- */
+
+#page-header-top {
+    background-image: url(../images/blue_hex_1.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #003366;
+}
+
+.head-text,
+.head-text a,
+.head-text small{
+    color: white;
+}
+
+.nav-pills > li > a{
+    background-color: #C0C0C0;
+    color: #003366;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active,
+.nav-pills > li > a:hover,
+.nav-pills > li > a:focus{
+    color: white;
+    background-color: #003366;
+    border-radius: 4px;
+}
+
+body { 
+    padding-bottom: 70px;
+}
+
+#content-panel-body {
+    background-color: #F2F2F7;
+}
+
+.navbar-fixed-bottom {
+    text-align: center;
+}
+
+.container .text-muted {
+  margin: 10px 0;
+}
+/* ----------------------------------------------------------------------------------------- */
