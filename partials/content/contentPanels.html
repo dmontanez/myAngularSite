@@ -4,10 +4,10 @@
     
     <!-- Panel Content for Education Page -->
     <section ng-show="contText.getPage(1)">
-        <ul class="nav nav-pills">
-            <li ng-class="{ active: cont.isSelected(0)}" id="nav-pill"><a href="#" ng-click="cont.selectSub(0)">PSU</a></li>
-            <li ng-class="{ active: cont.isSelected(1)}" id="nav-pill"><a href="#" ng-click="cont.selectSub(1)">CSUB</a></li>
-            <li ng-class="{ active: cont.isSelected(-1)}" id="nav-pill"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
+        <ul class="nav nav-tabs">
+            <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">PSU</a></li>
+            <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">CSUB</a></li>
+            <li ng-class="{ active: cont.isSelected(-1)}"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
         </ul>
         
         <br>
@@ -32,7 +32,7 @@
     </section>
     <!-- Panel Content for Experience Page -->
     <section ng-show="contText.getPage(2)">
-        <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
             <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">CSC</a></li>
             <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">OXY</a></li>
             <li ng-class="{ active: cont.isSelected(-1)}"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
@@ -59,7 +59,7 @@
     </section>
     <!-- Panel Content for Skills Page ----------------------------------------------------------------------------- -->
     <section ng-show="contText.getPage(3)">
-        <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
             <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">PROFICIENT</a></li>
             <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">MODERATELY PROFICIENT</a></li>
             <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">PRIOR EXPERIENCE</a></li>
@@ -108,7 +108,7 @@
     </section>
     <!-- Panel Content for Projects Page ----------------------------------------------------------------------------- -->
     <section ng-show="contText.getPage(4)">
-        <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
             <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">WEBSITE</a></li>
             <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">RESUME APP</a></li>
             <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">BUDGET NOTEBOOK</a></li>
@@ -168,7 +168,7 @@
     </section>
     <!-- Panel Content for Other Page ----------------------------------------------------------------------------- -->
     <section ng-show="contText.getPage(5)">
-        <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
             <li ng-class="{ active: cont.isSelected(0)}"><a href="#" ng-click="cont.selectSub(0)">COMMUNICATION</a></li>
             <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">LEADERSHIP</a></li>
             <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">ACTIVITIES</a></li>
