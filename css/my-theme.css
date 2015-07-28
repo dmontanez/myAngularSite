@@ -50,4 +50,25 @@ body {
 .container .text-muted {
   margin: 10px 0;
 }
+#foreground-img {
+    position: absolute;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    border-radius: 5px;
+    -webkit-box-shadow: -11px -7px 5px 0px rgba(0,0,0,0.32);
+    -moz-box-shadow: -11px -7px 5px 0px rgba(0,0,0,0.32);
+    box-shadow: -11px -7px 5px 0px rgba(0,0,0,0.32);
+    background-color: white;
+    bottom: 0px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+    z-index: 1000;
+}
+.my-button {
+    width: 200px;
+    border-radius: 5px;
+}
 /* ----------------------------------------------------------------------------------------- */
