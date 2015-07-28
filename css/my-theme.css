@@ -16,7 +16,7 @@
 }
 
 .nav-tabs > li > a{
-    background-color: #C0C0C0;
+    background-color: #E7E7E7;
     color: #003366;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -39,8 +39,21 @@ body {
     padding-bottom: 70px;
 }
 
-#content-panel-body {
+.panel .panel-default {
     background-color: #F2F2F7;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    border-radius: 0px;
+    -webkit-box-shadow: -8px 8px 4px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: -8px 8px 4px 0px rgba(0,0,0,0.5);
+    box-shadow: -8px 8px 4px 0px rgba(0,0,0,0.5);
+}
+
+#frame-to-fit {
+    width: 90%;
+    height: 90%;
 }
 
 .navbar-fixed-bottom {
