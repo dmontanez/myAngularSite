@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $(".navbar-nav li a").click(function() {
-        if (!$(this).hasClass('dropdown-toggle')) {
+        if (!$(this).hasClass("dropdown-toggle")) {
             $(".navbar-collapse").collapse('hide');
         }
     });
