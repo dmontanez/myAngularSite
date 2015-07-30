@@ -6,6 +6,9 @@
 
         <title>Daniel Montanez</title>
         
+        <!-- External compiled and minified Angular JavaScript -->
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        
         <!-- Latest compiled and minified jQuery -->
         <script src="js/jquery.min.js"></script>
         
@@ -18,10 +21,7 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.collapse.js"></script>
         <script type="text/javascript" src="js/bootstrap.transition.js"></script>
-        
-        <!-- External compiled and minified Angular JavaScript & local myApp file -->
-        <script type="text/javascript" src="js/angular.min.js"></script>
-        
+                
         <!-- Custom CSS / JS ---------------------------------------------------------- -->
         <script src="ng/app.js"></script>
         <script src="ng/header.js"></script>
@@ -34,24 +34,24 @@
     
     <!-- Everything in the BODY tag falls into myApp -->
     <body ng-app="myApp">
-        
+                
         <!-- Header -->
-        <my-header></my-header>
+        <my-header ng-cloak></my-header>
          
         <!-- Navigation -->
-        <my-nav-bar></my-nav-bar>
+        <my-nav-bar ng-cloak></my-nav-bar>
         
         <!-- Content -->
-        <content-header></content-header>
+        <content-header ng-cloak></content-header>
         <div class="panel panel-default">
             <div class="panel-body" id="content-panel-body">
-                <content-text></content-text>
-                <content-panels></content-panels>
+                <content-text ng-cloak></content-text>
+                <content-panels ng-cloak></content-panels>
             </div>
         </div>
         
         <!-- Footer -->
-        <my-footer></my-footer>
+        <my-footer ng-cloak></my-footer>
         
     </body>
 </html>
