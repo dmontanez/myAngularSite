@@ -5,6 +5,8 @@ $(document).ready(function() {
     
     $(".dropdown-menu li a").on('click', function(event) {
         event.preventDefault();
+        var dropTitle = $(this).text() + " ";
+       $(this).closest('div').find('button text').text(dropTitle);
     });
     
     var w = $(window).width();

@@ -63,9 +63,9 @@
             start: 1306911600000,
             end: 1306911600000,
             isCurrent: true,
-            descr: 'Provide key analysis necessary for demonstrating program success in the form of Operational Availability.' +
-                    'Developed unique Provisioning algorithm for generating spares procurement recommendations.' +
-                    'Generate recommendations to maximize return on investment of program assets.' +
+            descr: 'Provide key analysis necessary for demonstrating program success in the form of Operational Availability. ' +
+                    'Developed unique Provisioning algorithm for generating spares procurement recommendations. ' +
+                    'Generate recommendations to maximize return on investment of program assets. ' +
                     'Developed and utilize database for management and analysis of program trouble tickets',
             images: [
                 "images/ex_logo_csc.png"
@@ -77,7 +77,7 @@
             start: 1280646000000,
             end: 1306911600000,
             isCurrent: false,
-            descr: 'Quality Assurance for new drill & existing well modification specifications.' +
+            descr: 'Quality Assurance for new drill & existing well modification specifications. ' +
                     'As part of a self driven initiative; created an Access database to track leased land plot, incident reports.  Used to nominate leases' +
                     ' for a Clean Lease award with the Department of Gas & Geothermal Resources.',
             images: [
@@ -210,9 +210,9 @@
             ],
             descr: 'This is the website you are currently viewing!  I developed this site using Angular.JS, and Twitter Bootstrap, to help organize some information about myself' +
                     ' and showcase what I am about.  You will find most (if not all) of this site is compiled of information that can be found on my resume and LinkedIn Profile.  ' +
-                    'I will be working in available APIs periodically, such as the LinkedIn API to keep my Skills and associated merit badges up to date.  The Interests section ' +
-                    'will provide some insight into me as an individual, and provides a better look at what isn\'t necissarily apparant from other sources.  Feel free to reach ' +
-                    'out on social media or email if you\'d like to discuss anything referenced on the site, or just network a little bit!'
+                    'I will be working in available APIs periodically, such as the LinkedIn API to keep my Skills and associated merit badges up to date.  The Other and ' +
+                    ' about me sections will provide some insight into me as an individual, and provides a better look at what isn\'t necessarily apparent from other sources.  ' +
+                    'Feel free to reach out on social media or email if you\'d like to discuss anything referenced on the site, or just network a little bit!'
         },
         {
             name: 'Resume App',
@@ -257,12 +257,6 @@
             ],
             descr: 'I created this web app to assist in running the summer team wrestling camp tournament that is run each year at CSUB. The application takes a list of teams, ' +
                     'and generates a tournament schedule to be run "Round Robin" style.'
-        },
-        {
-            name: 'Ideas - TODO',
-            items: [
-                
-            ]
         }
     ];
     
@@ -287,6 +281,34 @@
                 'Four year letter winner for CSUB’s Division I Wrestling Team (2006 – 2010)',
                 'Assistant Wrestling Coach for Cathedral Catholic High School (2013 – Present)'
             ]
+        }
+    ];
+    
+    var aboutQuotes = [
+        {
+            author: 'Anthony Hopkins',
+            text: '"My philosophy is: It\'s none of my business what people say of me and think of me. ' + 
+                    'I am what I am and I do what I do. I expect nothing and accept everything. And it makes life so much easier."'
+        }
+    
+    ];
+    
+    var aboutImages = [
+        {
+            descr: 'My first year, wedding anniversarry on Cornodo Beach.',
+            imgURL: "images/1-year-anni.jpg"
+        },
+        {
+            descr: 'All of my pups, from right-to-left: Scrappy, Sophie, Chica.',
+            imgURL: "images/pups.jpg"
+        },
+        {
+            descr: 'Competing in a wrestling match in college.',
+            imgURL: "images/wrestling.jpg"
+        },
+        {
+            descr: 'Stock pic of my motorcycle; Triumph Thruxton.',
+            imgURL: "images/thruxton.jpg"
         }
     ];
     
@@ -342,6 +364,11 @@
     app.controller('AddinfoController', function() {
         this.interests = others;
     });
+
+    app.controller('AboutMeController', function() {
+        this.quotes = aboutQuotes;
+        this.images = aboutImages;
+    });
     
     app.directive('contentHeader', function() {
         return {
@@ -376,6 +403,9 @@
                             pageTitle = 'Resume'
                             break;
                         case 7:
+                            pageTitle = 'About Me'
+                            break;
+                        case 8:
                             pageTitle = 'Contact'
                             break;
                     }
@@ -428,7 +458,6 @@
                         $scope.sub_page = -1;
                     };
                 });
-                                
                 this.getPage = function(val) {
                     return $scope.page === val;
                 };

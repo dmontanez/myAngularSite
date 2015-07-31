@@ -6,10 +6,8 @@
     <section ng-show="contText.getPage(1)">
         
         <div class="dropdown small">
-            <button class="btn btn-default dropdown-toggle" 
-                    type="button" id="contDrop1" data-toggle="dropdown" 
-                    aria-haspopup="true" aria-expanded="true">
-                        Schools
+            <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <text>ALL</text>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -49,10 +47,8 @@
     <section ng-show="contText.getPage(2)">
         
         <div class="dropdown small">
-            <button class="btn btn-default dropdown-toggle" 
-                    type="button" id="contDrop1" data-toggle="dropdown" 
-                    aria-haspopup="true" aria-expanded="true">
-                        Companies
+            <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <text>ALL</text>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -75,7 +71,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <img ng-src={{position.images[0]}} height="100" />
-                        <h4 class="panel-title">{{position.name}}</h4>
+                        <h4 class="panel-title"><b>{{position.name}}</b></h4>
                         <h5>{{position.title}}</h5>
                         <div ng-hide="{{position.isCurrent}}"><h6>{{position.start | date}} - {{position.end | date}}</h6></div>
                         <div ng-show="{{position.isCurrent}}"><h6>{{position.start | date}} - Present</h6></div>
@@ -91,10 +87,8 @@
     <section ng-show="contText.getPage(3)">
         
         <div class="dropdown small">
-            <button class="btn btn-default dropdown-toggle" 
-                    type="button" id="contDrop1" data-toggle="dropdown" 
-                    aria-haspopup="true" aria-expanded="true">
-                        Skill Level/Type
+            <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <text>ALL</text>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -159,10 +153,8 @@
     <section ng-show="contText.getPage(4)">
         
         <div class="dropdown small">
-            <button class="btn btn-default dropdown-toggle" 
-                    type="button" id="contDrop1" data-toggle="dropdown" 
-                    aria-haspopup="true" aria-expanded="true">
-                        Projects
+            <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <text>ALL</text>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -170,7 +162,6 @@
                 <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">RESUME APP</a></li>
                 <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">BUDGET NOTEBOOK</a></li>
                 <li ng-class="{ active: cont.isSelected(3)}"><a href="#" ng-click="cont.selectSub(3)">TOURNAMENT CREATOR</a></li>
-                <li ng-class="{ active: cont.isSelected(4)}"><a href="#" ng-click="cont.selectSub(4)">IDEAS - TODO</a></li>
                 <li ng-class="{ active: cont.isSelected(-1)}"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
             </ul>
         </div>
@@ -180,7 +171,6 @@
             <li ng-class="{ active: cont.isSelected(1)}"><a href="#" ng-click="cont.selectSub(1)">RESUME APP</a></li>
             <li ng-class="{ active: cont.isSelected(2)}"><a href="#" ng-click="cont.selectSub(2)">BUDGET NOTEBOOK</a></li>
             <li ng-class="{ active: cont.isSelected(3)}"><a href="#" ng-click="cont.selectSub(3)">TOURNAMENT CREATOR</a></li>
-            <li ng-class="{ active: cont.isSelected(4)}"><a href="#" ng-click="cont.selectSub(4)">IDEAS - TODO</a></li>
             <li ng-class="{ active: cont.isSelected(-1)}"><a href="#" ng-click="cont.selectSub(-1)">ALL</a></li>
         </ul>         
         
@@ -237,10 +227,8 @@
     <section ng-show="contText.getPage(5)">
         
         <div class="dropdown small">
-            <button class="btn btn-default dropdown-toggle" 
-                    type="button" id="contDrop1" data-toggle="dropdown" 
-                    aria-haspopup="true" aria-expanded="true">
-                        Other Skills/Activities
+            <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <text>ALL</text>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -277,8 +265,44 @@
             </section>
         </div>
     </section>
+    
+    <!-- Panel Content for About Me Page ----------------------------------------------------------------------------- -->
+     <section ng-show="contText.getPage(7)">
+        <div ng-controller="AboutMeController as about">
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 calss="panel-title">Pictures</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-2 col-md-3" ng-repeat="image in about.images">
+                            <center><img class="about-pic" ng-src="{{image.imgURL}}"></center>
+                            <h5>{{image.descr}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 calss="panel-title">Quotes</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-2 col-md-3" ng-repeat="quote in about.quotes">
+                            <h3>{{quote.text}}</h3>
+                            <h5>{{quote.author}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
     <!-- Panel Content for Contact Page ----------------------------------------------------------------------------- -->
-    <section ng-show="contText.getPage(7)">
+    <section ng-show="contText.getPage(8)">
         <div ng-controller="ContactController as contact">
             <div class="panel panel-default">
                 <div class="panel-heading">
