@@ -205,6 +205,7 @@
                 'HTML',
                 'CSS',
                 'JavaScript',
+                'jQuery',
                 'Angular.JS',
                 'Twitter Bootstrap'
             ],
