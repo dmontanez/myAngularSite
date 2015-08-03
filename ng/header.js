@@ -26,11 +26,8 @@
                     email: 'dmontanez@psualum.com'
                 };
                 this.address = {
-                    street: '7636 Palmilla Drive',
-                    unit_apt: 'Unit 110',
                     city: 'San Diego',
-                    state: 'CA',
-                    zip: 92122
+                    state: 'CA'
                 };
             },
             controllerAs: 'head'

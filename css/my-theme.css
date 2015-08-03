@@ -90,6 +90,16 @@ body {
 }
 
 .about-pic {
-    height: 180px;
+    padding-bottom: 50px;
+}
+
+.about-pic-modal{
+    padding: 20px 20px 20px 20px;
+}
+
+@media screen and (max-width: 650px) {
+     .about-text{
+        font-size: 15px;
+    }
 }
 /*----------------------------------------------------------------------------------------- */

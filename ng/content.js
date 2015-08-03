@@ -289,26 +289,45 @@
             author: 'Anthony Hopkins',
             text: '"My philosophy is: It\'s none of my business what people say of me and think of me. ' + 
                     'I am what I am and I do what I do. I expect nothing and accept everything. And it makes life so much easier."'
+        },
+        {
+            author: 'Michael Scott',
+            text: '"That\'s what she said."'
         }
-    
     ];
     
     var aboutImages = [
         {
             descr: 'My first year, wedding anniversarry on Cornodo Beach.',
-            imgURL: "images/1-year-anni.jpg"
+            imgURL: "images/about-pics/1-year-anni.jpg"
         },
         {
             descr: 'All of my pups, from right-to-left: Scrappy, Sophie, Chica.',
-            imgURL: "images/pups.jpg"
+            imgURL: "images/about-pics/pups.jpg"
         },
         {
             descr: 'Competing in a wrestling match in college.',
-            imgURL: "images/wrestling.jpg"
+            imgURL: "images/about-pics/wrestling.jpg"
         },
         {
-            descr: 'Stock pic of my motorcycle; Triumph Thruxton.',
-            imgURL: "images/thruxton.jpg"
+            descr: 'Custom mini bar that I designed and built myself.',
+            imgURL: "images/about-pics/mini-bar.jpg"
+        },
+        {
+            descr: 'Stock photo of my motorcycle; Triumph Thruxton.',
+            imgURL: "images/about-pics/thruxton.jpg"
+        },
+        {
+            descr: 'Getting ready for a ride with the wife!',
+            imgURL: "images/about-pics/bike-ride.png"
+        },
+        {
+            descr: 'Just a picture of my dog, Sophie being playful.',
+            imgURL: "images/about-pics/soph-play.png"
+        },
+        {
+            descr: 'One of my favorite things to do, walk on the beach.',
+            imgURL: "images/about-pics/beach-hike.png"
         }
     ];
     
@@ -352,11 +371,8 @@
         this.locations = [
             {
                 type: 'Home',
-                street: '7636 Palmilla Drive',
-                unit_apt: 'Unit 110',
                 city: 'San Diego',
-                state: 'CA',
-                zip: 92122
+                state: 'CA'
             }
         ]
     });
@@ -368,6 +384,20 @@
     app.controller('AboutMeController', function() {
         this.quotes = aboutQuotes;
         this.images = aboutImages;
+    });
+    
+    app.directive('aboutClick', function() {
+        return {
+            restrict: "A",
+            link: function(scope, elem, attrs) {
+                $(elem).click(function() {
+                    var aboutSrc = $(this).attr('src');
+                    var parts = aboutSrc.split('/');
+                    aboutSrc = 'images\\about-pics\\big\\' + parts[2];
+                    $(".about-pic-modal").attr('src', aboutSrc);
+                });
+            }
+        }
     });
     
     app.directive('contentHeader', function() {

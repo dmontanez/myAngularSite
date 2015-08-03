@@ -265,42 +265,48 @@
             </section>
         </div>
     </section>
-    
     <!-- Panel Content for About Me Page ----------------------------------------------------------------------------- -->
-     <section ng-show="contText.getPage(7)">
-        <div ng-controller="AboutMeController as about">
-            
+    <section ng-show="contText.getPage(7)">
+        <div ng-controller="AboutMeController as about">            
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 calss="panel-title">Pictures</h4>
                 </div>
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-2 col-md-3" ng-repeat="image in about.images">
-                            <center><img class="about-pic" ng-src="{{image.imgURL}}"></center>
-                            <h5>{{image.descr}}</h5>
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <center>
+                                <img class="about-pic-modal img-responsive"/>
+                            </center>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row about-row">
+                        <div class="about-pic col-lg-3 col-md-4 col-xs-6"  ng-repeat="image in about.images">
+                            <a class="thumbnail" href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                <img about-click class="img-responsive" src="{{image.imgURL}}" alt="">
+                            </a>
+                            <p class="about-text">{{image.descr}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 calss="panel-title">Quotes</h4>
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-xs-2 col-md-3" ng-repeat="quote in about.quotes">
+                        <div class="col-lg-3 col-md-4 col-xs-8 thumb" ng-repeat="quote in about.quotes">
                             <h3>{{quote.text}}</h3>
-                            <h5>{{quote.author}}</h5>
+                            <h5>- {{quote.author}}</h5>
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div> 
         </div>
     </section>
-    
     <!-- Panel Content for Contact Page ----------------------------------------------------------------------------- -->
     <section ng-show="contText.getPage(8)">
         <div ng-controller="ContactController as contact">
@@ -354,9 +360,7 @@
                           <tr ng-repeat="location in contact.locations">
                             <td><small>{{location.type}}</small></td>
                             <td><small>
-                                {{location.street}}<br>
-                                {{location.unit_apt}}<br>
-                                {{location.city + ", " + location.state + " " + location.zip}}   
+                                {{location.city + ", " + location.state}}   
                             </small></td>
                           </tr>
                         </tbody>
