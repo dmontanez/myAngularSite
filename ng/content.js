@@ -391,7 +391,8 @@
         return {
             restrict: "A",
             link: function(scope, elem, attrs) {
-                $(elem).click(function() {
+                $(elem).click(function(event) {
+                    event.preventDefault();
                     $(".about-pic-modal").attr('src', '');
                     var aboutSrc = $(this).attr('src');
                     var parts = aboutSrc.split('/');
