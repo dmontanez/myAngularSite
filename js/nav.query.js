@@ -4,7 +4,7 @@ $(document).ready(function() {
             $(".navbar-collapse").collapse('hide');
         }
     });
-    $(".dropdown-menu li a").click(function(event) {
+    $(".ext-link").click(function(event) {
         event.stopImmediatePropagation();
     });
     
