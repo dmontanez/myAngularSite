@@ -4,6 +4,10 @@ $(document).ready(function() {
             $(".navbar-collapse").collapse('hide');
         }
     });
+    $(".dropdown-menu li a").click(function(event) {
+        event.stopImmediatePropagation();
+    });
+    
     $(".navbar-brand").click(function() {
         $(".navbar-collapse").collapse('hide');
     });
