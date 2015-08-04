@@ -392,9 +392,10 @@
             restrict: "A",
             link: function(scope, elem, attrs) {
                 $(elem).click(function() {
+                    $(".about-pic-modal").attr('src', '');
                     var aboutSrc = $(this).attr('src');
                     var parts = aboutSrc.split('/');
-                    aboutSrc = 'images\\about-pics\\big\\' + parts[2];
+                    aboutSrc = 'images/about-pics/big/' + parts[2];
                     $(".about-pic-modal").attr('src', aboutSrc);
                 });
             }
