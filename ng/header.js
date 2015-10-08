@@ -20,7 +20,7 @@
             templateUrl: 'partials/header/myHeader.html',
             controller: function() {
                 this.name = 'Daniel J. Montanez';
-                this.title = 'ME, Software Engineering';
+                this.title = 'Software Engineer';
                 this.contact = {
                     phone: 6618694325,
                     email: 'dmontanez@psualum.com'
